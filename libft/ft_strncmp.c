@@ -6,11 +6,13 @@
 /*   By: rha-le <rha-le@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:41:55 by rha-le            #+#    #+#             */
-/*   Updated: 2024/11/12 13:45:46 by rha-le           ###   ########.fr       */
+/*   Updated: 2024/11/12 15:34:45 by rha-le           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2, int n)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	while (*s1 == *s2 && --n && *s1)
 	{
