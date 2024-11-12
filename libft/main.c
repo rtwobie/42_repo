@@ -6,7 +6,7 @@
 /*   By: rha-le <rha-le@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:59:28 by rha-le            #+#    #+#             */
-/*   Updated: 2024/11/12 16:15:21 by rha-le           ###   ########.fr       */
+/*   Updated: 2024/11/12 19:52:11 by rha-le           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,22 @@ void	test_strncmp(char *s1, char *s2, size_t n)
 // 		printf("\n");
 // }
 
+void	test_memset(void)
+{
+	char n[10];
+	memset(n, 10, sizeof(char) * 10);
+	int	i = 0;
+	while (i < 10)
+		printf("%i\n", n[i++]);
+
+	printf("\n");
+	char x[10];
+	ft_memset(x, 10, sizeof(char) * 10);
+	i = 0;
+	while (i < 10)
+		printf("%i\n", x[i++]);
+}
+
 int	main(int argc, char *argv[])
 {
 	(void)argc;
@@ -60,7 +76,7 @@ int	main(int argc, char *argv[])
 	if (strncmp(argv[1], "strchr", 6) == 0)
 		test_strchr(argv[2], argv[3]);
 
-	if (strncmp(argv[1], "strrchr", 7) == 0)
+if (strncmp(argv[1], "strrchr", 7) == 0)
 		test_strrchr(argv[2], argv[3]);
 
 	if (strncmp(argv[1], "strncmp", 7) == 0)
@@ -69,4 +85,6 @@ int	main(int argc, char *argv[])
 	// if (strncmp(argv[1], "strnstr", 7) == 0)
 	// 	test_strnstr(argv[2], argv[3], (size_t)strtoul(argv[4], &endptr, 10));
 
+	if (strncmp(argv[1], "memset", 6) == 0)
+		test_memset();
 }
