@@ -66,6 +66,30 @@ void	test_memset(void)
 		printf("%i\n", x[i++]);
 }
 
+void	test_memcpy(char *src, int n, int dt_tp)
+{
+	int len = strlen(src);
+	char dest[len];
+
+	// dt_tp 1 == input is interpreted as int array
+	// dt_tp 0 == input is interpreted as char string
+	if (dt_tp != 0 || dt_tp != 1)
+	{
+		printf("wrong data type\n");
+		exit (1);
+	}
+	if (dt_tp == 0)
+	{
+		memcpy(dest, src, n);
+		printf("%s\n", dest);
+
+		// memset(dest, len, sizeof(char) * len);
+		ft_memcpy(dest, src, n);
+		printf("%s\n", dest);
+	}
+	// gives segfault | 14.11.2024
+}
+
 int	main(int argc, char *argv[])
 {
 	(void)argc;
@@ -76,7 +100,7 @@ int	main(int argc, char *argv[])
 	if (strncmp(argv[1], "strchr", 6) == 0)
 		test_strchr(argv[2], argv[3]);
 
-if (strncmp(argv[1], "strrchr", 7) == 0)
+	if (strncmp(argv[1], "strrchr", 7) == 0)
 		test_strrchr(argv[2], argv[3]);
 
 	if (strncmp(argv[1], "strncmp", 7) == 0)
@@ -87,4 +111,7 @@ if (strncmp(argv[1], "strrchr", 7) == 0)
 
 	if (strncmp(argv[1], "memset", 6) == 0)
 		test_memset();
+
+	if (strncmp(argv[1], "memcpy", 6) == 0)
+		test_memcpy(argv[2], atoi(argv[3]), atoi(argv[4]));
 }
