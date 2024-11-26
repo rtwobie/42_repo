@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rha-le <rha-le@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 17:22:58 by rha-le            #+#    #+#             */
-/*   Updated: 2024/11/26 17:23:23 by rha-le           ###   ########.fr       */
+/*   Created: 2024/11/26 17:06:49 by rha-le            #+#    #+#             */
+/*   Updated: 2024/11/26 17:29:13 by rha-le           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t			i;
-	unsigned char	*src;
+	size_t	i;
+	size_t	j;
 
-	src = (unsigned char *)s;
 	i = 0;
-	while (i < n)
+	j = ft_strlen(dest);
+	while (src[i] && i < size)
 	{
-		if (src[i] == c)
-			return (&src[i]);
+		dest[j + i] = src[i];
 		i++;
 	}
-	return (NULL);
+	return (j + i);
 }
+
+/*int	main(void)*/
+/*{*/
+/*	char	*dest = "Hello ";*/
+/**/
+/*	printf("%zu, %s\n", ft_strlcat(dest, "World!", 3), dest);*/
+/*}*/
+
+/*
+ * NOTE: size = strlen(dest) - 1
+ *		 NUL-terminate, unless size == 0 || dest > size
+ */

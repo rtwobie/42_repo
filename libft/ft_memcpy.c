@@ -21,10 +21,20 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	d = (char *)dest;
 	s = (char *)src;
 	i = 0;
-	while (i < n)
+	if (!src)
+		return (dest);
+	while (s[i] && i < n)
 	{
 		d[i] = s[i];
 		i++;
 	}
+	d[i] = '\0';
 	return (dest);
 }
+
+/* FIX:
+ *	[crash]: your memcpy's return is false/doesn't work with basic params
+ *	[crash]: your memcpy crash because it read/write too many bytes !
+ *	[crash]: your memcpy does not behave well with NULL as both params
+ *	[crash]: your memcpy does not behave well with NULL as both params with size
+ */

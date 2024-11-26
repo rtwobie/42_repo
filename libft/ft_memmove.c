@@ -40,3 +40,11 @@ void	*ft_memmove(void *dest, void *src, size_t n)
 	}
 	return (dest);
 }
+
+// FIX:
+/*[fail]: your memmove does not support the overlap (test 1)*/
+/*[crash]: your memmove does not support the overlap (test 2)*/
+/*[crash]: your memmove crash because it read too many bytes or attempt to read on dst !*/
+/*[crash]: your memmove does not well with NULL as both parameters*/
+/*[crash]: your memmove does not well with NULL as both parameters and size*/
+

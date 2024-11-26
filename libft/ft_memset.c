@@ -12,16 +12,21 @@
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *ptr, int c, size_t n)
 {
 	size_t	i;
+	char	*p;
 
+	p = (char *)ptr;
 	i = 0;
 	while (i < n)
 	{
-		*(char *)s = c;
+		p[i] = c;
 		i++;
-		s++;
 	}
-	return (s);
+	return (ptr);
 }
+
+/* FIX:
+ * your memset return address is false/your memset does not wor
+ */
