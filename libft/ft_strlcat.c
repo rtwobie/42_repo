@@ -19,21 +19,49 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	j = ft_strlen(dest);
-	while (src[i] && i < size)
+	i = ft_strlen(dest);
+	if (size < i)
+		i = size;
+	j = 0;
+	while (src[j] && j < size - i - 1)
 	{
-		dest[j + i] = src[i];
-		i++;
+		dest[i + j] = src[j];
+		j++;
 	}
-	return (j + i);
+	if (j < size)
+		dest[j + i] = '\0';
+	return (i + ft_strlen(src));
 }
+
+/*size_t	ft_strlcattt(char *dst, const char *src, size_t size)*/
+/*{*/
+/*	size_t	i;*/
+/*	size_t	j;*/
+/**/
+/*	i = 0;*/
+/*	j = 0;*/
+/*	while (dst[i] && i < size)*/
+/*		i++;*/
+/*	while (src[j] && (i + j + 1) < size)*/
+/*	{*/
+/*		dst[i + j] = src[j];*/
+/*		j++;*/
+/*	}*/
+/*	if (i < size)*/
+/*		dst[i + j] = '\0';*/
+/*	return (i + ft_strlen(src));*/
+/*}*/
 
 /*int	main(void)*/
 /*{*/
-/*	char	*dest = "Hello ";*/
+/*	char first[20] = "Hello ";*/
+/*    char last[] = "World!";*/
 /**/
-/*	printf("%zu, %s\n", ft_strlcat(dest, "World!", 3), dest);*/
+/*    int size = 11;*/
+/*    char buffer[size];*/
+/**/
+/*    strcpy(buffer,first);*/
+/*	printf("%zu, %s\n", ft_strlcat(first, last, 9), first);*/
 /*}*/
 
 /*

@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rha-le <rha-le@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 13:41:55 by rha-le            #+#    #+#             */
-/*   Updated: 2024/11/12 15:34:45 by rha-le           ###   ########.fr       */
+/*   Created: 2024/11/27 12:56:21 by rha-le            #+#    #+#             */
+/*   Updated: 2024/11/27 12:57:06 by rha-le           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t size)
+size_t	ft_strlcpy(char dest[], const char *src, size_t size)
 {
+	size_t	i;
+
 	if (!size)
-		return (0);
-	while (*s1 == *s2 && --size && *s1)
+		return (ft_strlen(src));
+	i = 0;
+	while (src[i] && i < size - 1)
 	{
-		s1++;
-		s2++;
+		dest[i] = src[i];
+		i++;
 	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	dest[i] = '\0';
+	return (ft_strlen(src));
 }
