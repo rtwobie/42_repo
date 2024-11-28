@@ -34,7 +34,7 @@ size_t	ft_strlcpy(char dest[], const char *src, size_t size); // PASSED:
 void	ft_bzero(void *s, size_t n); // PASSED:
 void	*ft_memset(void *s, int c, size_t n); // PASSED:
 void	*ft_memcpy(void *dest, const void *src, size_t n); // PASSED:
-void	*ft_memmove(void *dest, void *src, size_t n);
+void	*ft_memmove(void *dest, void *src, size_t n); // PASSED:
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strdup(const char *src); // PASSED:
@@ -45,10 +45,11 @@ char	*ft_strdup(const char *src); // PASSED:
 //		[x] ft_strlcat();
 //		[ ] ft_calloc();
 //		[x] ft_strdup();
+//		[ ] clean up Makefile
 
 // BOUNTY:
-//		[ ] memmove();
-//		[ ] strlcat();
+//		[x] memmove();
+//		[x] strlcat();
 //		[ ] strchr();
 //		[ ] strrchr();
 //		[ ] strncmp();
