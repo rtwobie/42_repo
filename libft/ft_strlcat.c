@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <string.h>
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
@@ -19,52 +18,26 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	i;
 	size_t	j;
 
-	i = ft_strlen(dest);
-	if (size < i)
-		i = size;
+	i = 0;
+	while (dest[i] && i < size)
+		i++;
 	j = 0;
-	while (src[j] && j < size - i - 1)
+	while (src[j] && (i + j + 1) < size)
 	{
 		dest[i + j] = src[j];
 		j++;
 	}
-	if (j < size)
-		dest[j + i] = '\0';
+	if (i < size)
+		dest[i + j] = '\0';
 	return (i + ft_strlen(src));
 }
 
-/*size_t	ft_strlcattt(char *dst, const char *src, size_t size)*/
-/*{*/
-/*	size_t	i;*/
-/*	size_t	j;*/
-/**/
-/*	i = 0;*/
-/*	j = 0;*/
-/*	while (dst[i] && i < size)*/
-/*		i++;*/
-/*	while (src[j] && (i + j + 1) < size)*/
-/*	{*/
-/*		dst[i + j] = src[j];*/
-/*		j++;*/
-/*	}*/
-/*	if (i < size)*/
-/*		dst[i + j] = '\0';*/
-/*	return (i + ft_strlen(src));*/
-/*}*/
-
-/*int	main(void)*/
-/*{*/
-/*	char first[20] = "Hello ";*/
-/*    char last[] = "World!";*/
-/**/
-/*    int size = 11;*/
-/*    char buffer[size];*/
-/**/
-/*    strcpy(buffer,first);*/
-/*	printf("%zu, %s\n", ft_strlcat(first, last, 9), first);*/
-/*}*/
-
 /*
- * NOTE: size = strlen(dest) - 1
- *		 NUL-terminate, unless size == 0 || dest > size
+ * NOTE: i will always be = destsize, unless size < destsize
+ *		 which will mean unless size is not bigger than destsize + 1 (NUL)
+ *		 then it will not go into the while
+ *
+ *		 conclusion:
+ *		 when using ft_strlcat,
+ *		 size should always be bigger than destsize including the NUL-Byte
  */
