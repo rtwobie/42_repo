@@ -10,18 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	int		i;
 
 	i = 0;
-	while (s[i])
+	while (str[i])
 	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
+		if (str[i] == (char)c)
+			return ((char *)(str + i));
 		i++;
 	}
-	if (s[i] == c)
-		return ((char *)&s[i]);
+	if ((char)c == '\0')
+		return ((char *)(str + i));
 	return (0);
 }
+
+/*#include <string.h>*/
+/*#include <stdio.h>*/
+/*int main(void)*/
+/*{*/
+/*	printf("%s\n", strchr("teste", 'e'));*/
+/*	printf("%s\n", ft_strchr("teste", 'e'));*/
+/*}*/
+/*
+ * NOTE:
+ *		Finds the first occurence of c in str
+ */
