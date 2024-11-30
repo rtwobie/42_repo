@@ -6,7 +6,7 @@
 /*   By: rha-le <rha-le@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 20:18:14 by rha-le            #+#    #+#             */
-/*   Updated: 2024/11/12 17:21:40 by rha-le           ###   ########.fr       */
+/*   Updated: 2024/11/30 23:36:34 by rha-le           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strdup(const char *src);
 void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_substr(const char *str, unsigned int start, size_t len);
 
 // TODO:
 //		[x] ft_memcmp();
