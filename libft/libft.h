@@ -6,7 +6,7 @@
 /*   By: rha-le <rha-le@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 20:18:14 by rha-le            #+#    #+#             */
-/*   Updated: 2024/11/30 23:36:34 by rha-le           ###   ########.fr       */
+/*   Updated: 2024/12/02 22:29:43 by rha-le           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,10 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strdup(const char *src);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_substr(const char *str, unsigned int start, size_t len);
+char	*ft_strjoin(const char *str1, const char *str2);
+char	*ft_strtrim(const char *s, const char *set);
 
 // TODO:
-//		[x] ft_memcmp();
-//		[x] ft_strlcpy();
-//		[x] ft_strlcat();
-//		[x] ft_calloc();
-//		[x] ft_strdup();
 //		[ ] clean up Makefile
 
 #endif
