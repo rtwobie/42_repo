@@ -6,10 +6,14 @@
 /*   By: rha-le <rha-le@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:21:27 by rha-le            #+#    #+#             */
-/*   Updated: 2024/11/12 13:47:29 by rha-le           ###   ########.fr       */
+/*   Updated: 2024/12/02 22:47:57 by rha-le           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * NOTE:
+ *		Finds the first occurence of c in str
+ */
 char	*ft_strchr(const char *str, int c)
 {
 	int		i;
@@ -33,7 +37,3 @@ char	*ft_strchr(const char *str, int c)
 /*	printf("%s\n", strchr("teste", 'e'));*/
 /*	printf("%s\n", ft_strchr("teste", 'e'));*/
 /*}*/
-/*
- * NOTE:
- *		Finds the first occurence of c in str
- */

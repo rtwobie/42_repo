@@ -13,6 +13,15 @@
 #include "libft.h"
 #include <string.h>
 
+/**
+ * NOTE: i will always be = destsize, unless size < destsize
+ *		 which will mean unless size is not bigger than destsize + 1 (NUL)
+ *		 then it will not go into the while
+ *
+ *		 conclusion:
+ *		 when using ft_strlcat,
+ *		 size should always be bigger than destsize including the NUL-Byte
+ */
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
@@ -31,13 +40,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		dest[i + j] = '\0';
 	return (i + ft_strlen(src));
 }
-
-/*
- * NOTE: i will always be = destsize, unless size < destsize
- *		 which will mean unless size is not bigger than destsize + 1 (NUL)
- *		 then it will not go into the while
- *
- *		 conclusion:
- *		 when using ft_strlcat,
- *		 size should always be bigger than destsize including the NUL-Byte
- */
