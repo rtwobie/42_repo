@@ -6,7 +6,7 @@
 /*   By: rha-le <rha-le@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 20:18:14 by rha-le            #+#    #+#             */
-/*   Updated: 2024/12/02 22:29:43 by rha-le           ###   ########.fr       */
+/*   Updated: 2024/12/03 13:08:18 by rha-le           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int		ft_tolower(int c);
 int		ft_strlen(const char *s);
 int		ft_atoi(const char *nptr);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
+char	*ft_strchr(const char *str, int c);
+char	*ft_strrchr(const char *str, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char dest[], const char *src, size_t size);
@@ -42,8 +42,10 @@ void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_substr(const char *str, unsigned int start, size_t len);
 char	*ft_strjoin(const char *str1, const char *str2);
 char	*ft_strtrim(const char *s, const char *set);
+char	**ft_split(const char *s, char c);
 
 // TODO:
 //		[ ] clean up Makefile
+//		[ ] figure out how to make documentation work
 
 #endif
