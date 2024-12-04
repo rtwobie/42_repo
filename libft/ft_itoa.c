@@ -69,16 +69,16 @@ char	*ft_itoa(int n)
 	return (res);
 }
 
-int main(void)
-{
-	char *s[3];
-	s[0] = ft_itoa(2147483647);
-	s[1] = ft_itoa(-2147483648);
-	s[2] = ft_itoa(0);
-	printf("%s\n", s[0]);
-	printf("%s\n", s[1]);
-	printf("%s\n", s[2]);
-	free(s[0]);
-	free(s[1]);
-	free(s[2]);
-}
+/*int main(void)*/
+/*{*/
+/*	char *s[3];*/
+/*	s[0] = ft_itoa(2147483647);*/
+/*	s[1] = ft_itoa(-2147483648);*/
+/*	s[2] = ft_itoa(0);*/
+/*	printf("%s\n", s[0]);*/
+/*	printf("%s\n", s[1]);*/
+/*	printf("%s\n", s[2]);*/
+/*	free(s[0]);*/
+/*	free(s[1]);*/
+/*	free(s[2]);*/
+/*}*/
