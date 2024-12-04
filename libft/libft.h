@@ -43,6 +43,7 @@ char	*ft_substr(const char *str, unsigned int start, size_t len);
 char	*ft_strjoin(const char *str1, const char *str2);
 char	*ft_strtrim(const char *s, const char *set);
 char	**ft_split(const char *s, char c);
+char	*ft_itoa(int n);
 
 // TODO:
 //		[ ] clean up Makefile
