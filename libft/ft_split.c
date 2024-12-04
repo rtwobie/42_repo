@@ -19,6 +19,8 @@ static char	**malloc_arr(const char *s, char c)
 	size_t	i;
 	size_t	size;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	size = 0;
 	while (s[i])
@@ -34,7 +36,7 @@ static char	**malloc_arr(const char *s, char c)
 	return (arr);
 }
 
-static char	*skip_dl(char *s, char c)
+static char	*skip_delimiter(char *s, char c)
 {
 	while (*s && *s == c)
 		s++;
@@ -61,13 +63,13 @@ char	**ft_split(const char *s, char c)
 	size_t	i;
 	size_t	end;
 
-	if (!s)
-		return (NULL);
 	res = malloc_arr(s, c);
+	if (!res)
+		return (NULL);
 	i = 0;
 	while (*s)
 	{
-		s = skip_dl((char *)s, c);
+		s = skip_delimiter((char *)s, c);
 		if (*s == '\0')
 			break ;
 		end = 0;
@@ -83,20 +85,20 @@ char	**ft_split(const char *s, char c)
 	return (res);
 }
 
-#include <stdio.h>
-int main(void)
-{
-	int	i = 0;
-	/*char **arr = ft_split("hallo#hi#jo", '#');*/
-	char **arr = ft_split("      split       this for   me  !       ", '#');
-	while (arr[i])
-	{
-		printf("%s\n", arr[i]);
-		i++;
-	}
-	printf("%s\n", arr[i]);
-	free_on_error(arr);
-}
+/*#include <stdio.h>*/
+/*int main(void)*/
+/*{*/
+/*	int	i = 0;*/
+/*	char **arr = ft_split("hallo#hi#jo", '#');*/
+/*	char **arr = ft_split("      split       this for   me  !       ", '#');*/
+/*	while (arr[i])*/
+/*	{*/
+/*		printf("%s\n", arr[i]);*/
+/*		i++;*/
+/*	}*/
+/*	printf("%s\n", arr[i]);*/
+/*	free_on_error(arr);*/
+/*}*/
 
 /**
  *
