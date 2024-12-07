@@ -1,6 +1,7 @@
 NAME = libft.a
 HEADER = libft.h
 CC = cc
+CFLAGS = -Wall -Werror -Wextra
 SRC = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 	  ft_isspace.c ft_toupper.c ft_tolower.c ft_strlen.c ft_atoi.c \
 	  ft_strncmp.c ft_strchr.c ft_strrchr.c ft_strnstr.c ft_strlcat.c \
@@ -14,7 +15,6 @@ BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 			ft_lstmap.c
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(SRC:.c=.o) $(BONUS_SRC:.c=.o)
-CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
@@ -28,7 +28,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
