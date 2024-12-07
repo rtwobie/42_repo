@@ -99,10 +99,3 @@ char	**ft_split(const char *s, char c)
 /*	printf("%s\n", arr[i]);*/
 /*	free_on_error(arr);*/
 /*}*/
-
-/**
- *
- * NOTE:
- *		what when "hello##world" ? 3 or 2 strings?
- *  len = i pos
- */
