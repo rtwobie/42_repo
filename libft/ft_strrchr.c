@@ -6,7 +6,7 @@
 /*   By: rha-le <rha-le@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 16:48:33 by rha-le            #+#    #+#             */
-/*   Updated: 2024/11/11 12:50:55 by rha-le           ###   ########.fr       */
+/*   Updated: 2024/12/07 14:51:03 by rha-le           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 /**
  * Finds the last occurrence of c in str.
+ *
  * @param str The string to search.
  * @param c The character to find.
  * @return A pointer to the last occurrence of c, or NULL if not found.
