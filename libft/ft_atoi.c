@@ -36,3 +36,25 @@ int	ft_atoi(const char *nptr)
 	}
 	return (num * sign);
 }
+
+/*#include <stdio.h>*/
+/*int main(void)*/
+/*{*/
+/*	printf("atoi\n");*/
+/*	printf("\ninput: %s\t output: %d\n", "-2147483648", atoi("-2147483648"));*/
+/*	printf("\ninput: %s\t output: %d\n", "2147483647", atoi("2147483647"));*/
+/*	printf("\ninput: %s\t output: %d\n", "\\t\\f\\v\\r 123", atoi( "\t\f\v\r 123"));*/
+/*	printf("\ninput: %s\t output: %d\n", "--123", atoi("--123"));*/
+/*	printf("\ninput: %s\t output: %d\n", "+123", atoi("+123"));*/
+/*	printf("\ninput: %s\t output: %d\n", "abc", atoi("abc"));*/
+/*	printf("\ninput: %s\t output: %d\n", "123a4", atoi("123a4"));*/
+/**/
+/*	printf("ft_atoi\n");*/
+/*	printf("\ninput: %s\t output: %d\n", "-2147483648", ft_atoi("-2147483648"));*/
+/*	printf("\ninput: %s\t output: %d\n", "2147483647", ft_atoi("2147483647"));*/
+/*	printf("\ninput: %s\t output: %d\n", "\\t\\f\\v\\r 123", ft_atoi( "\t\f\v\r 123"));*/
+/*	printf("\ninput: %s\t output: %d\n", "--123", ft_atoi("--123"));*/
+/*	printf("\ninput: %s\t output: %d\n", "+123", ft_atoi("+123"));*/
+/*	printf("\ninput: %s\t output: %d\n", "abc", ft_atoi("abc"));*/
+/*	printf("\ninput: %s\t output: %d\n", "123a4", ft_atoi("123a4"));*/
+/*}*/
