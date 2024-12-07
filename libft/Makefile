@@ -1,6 +1,6 @@
 NAME = libft.a
 HEADER = libft.h
-CC = cc
+CC = gcc
 SRC = $(wildcard ft_*.c)
 BASE_SRC = $(filter-out ft_lst*.c, $(SRC))
 BONUS_SRC = $(wildcard ft_lst*.c)
