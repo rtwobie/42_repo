@@ -12,8 +12,6 @@
 
 #include <stdlib.h>
 
-#include <stdio.h>
-
 static char	*alloc_nbr(char *s, long n, int size_n)
 {
 	if (n < 0)
@@ -69,6 +67,7 @@ char	*ft_itoa(int n)
 	return (res);
 }
 
+/*#include <stdio.h>*/
 /*int main(void)*/
 /*{*/
 /*	char *s[3];*/
