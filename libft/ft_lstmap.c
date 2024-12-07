@@ -6,12 +6,11 @@
 /*   By: rha-le <rha-le@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:27:54 by rha-le            #+#    #+#             */
-/*   Updated: 2024/12/07 16:58:51 by rha-le           ###   ########.fr       */
+/*   Updated: 2024/12/07 17:28:55 by rha-le           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 /**
  * @brief Creates a new list resulting from applying a function to each element.
@@ -29,24 +28,27 @@
  */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*res;
+	t_list	*new_list;
 	t_list	*new_node;
+	void	*new_content;
 
-	res = NULL;
+	new_list = NULL;
 	if (!lst || !f || !del)
 		return (NULL);
 	while (lst)
 	{
-		new_node = ft_lstnew(f(lst->content));
+		new_content = (f(lst->content));
+		new_node = ft_lstnew(new_content);
 		if (!new_node)
 		{
-			ft_lstclear(&res, del);
+			del(new_content);
+			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&res, new_node);
+		ft_lstadd_back(&new_list, new_node);
 		lst = lst->next;
 	}
-	return (res);
+	return (new_list);
 }
 
 /*static void	*rot1(void *content)*/
