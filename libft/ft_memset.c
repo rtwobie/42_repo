@@ -26,7 +26,3 @@ void	*ft_memset(void *ptr, int c, size_t n)
 	}
 	return (ptr);
 }
-
-/* FIX:
- * your memset return address is false/your memset does not wor
- */
