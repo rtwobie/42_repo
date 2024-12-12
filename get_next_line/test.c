@@ -4,9 +4,19 @@
 
 char *test(int fd)
 {
-	static char	buffer[1024];
-	read(fd, buffer, 100);
-	return (buffer);
+	char	buffer[1024];
+	char	*s;
+	int i = 0;
+	read(fd, buffer, 1);
+	read(fd, buffer, 1);
+	read(fd, buffer, 1);
+	while (buffer[i])
+	{
+		s[i] = buffer[i];
+		i++;
+	}
+	s[i] = '\0';
+	return (s);
 }
 
 int test1(void)
@@ -20,7 +30,10 @@ int test1(void)
 
 int main(void)
 {
-	printf("%d\n", test1());
-	printf("%d\n", test1());
-	printf("%d\n", test1());
+	char *buffer;
+	int fd;
+
+	fd = open("test.txt", O_RDONLY);
+	buffer = test(fd);
+	printf("%s\n", buffer);
 }
