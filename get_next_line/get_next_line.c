@@ -11,37 +11,17 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdlib.h>
-#include <unistd.h>
 
-char	*read_line(int fd, int count)
+int	ababa(void)
 {
-	char	*s;
-
-	return (s);
-}
-
-char	*get_next_line(int fd)
-{
-	static t_list	*text;
-	t_list			*temp;
-	char			*s;
-
-	text = NULL;
-	s = read_line(fd, /*line count*/);
-	ft_lstadd_back(&text, ft_lstnew(s));
-	temp = text;
-	text = temp->next;
-	return (temp->line);
+	static t_list oy;
+	++oy.len;
+	return (oy.len);
 }
 
 #include <stdio.h>
 #include <fcntl.h>
 int main(void)
 {
-	int fd;
-
-	fd = open("test.txt", O_RDONLY);
-	printf("%s\n", get_next_line(fd));
-	printf("%s\n", get_next_line(fd));
+	printf("%d\n", ababa());
 }

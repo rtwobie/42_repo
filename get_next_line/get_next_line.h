@@ -13,14 +13,19 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFFER_SIZE 1024
+# ifndef BUFFER_SIZE
+# define BUFFER_SIZE 10
+# endif
+
+# include <stdlib.h>
 
 typedef struct s_list
 {
-	char			*line;
-	struct s_list	*next;
+	int len;
 }	t_list;
 
+int		ft_strrchr(const char *str, int c);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 char	*get_next_line(int fd);
 t_list	*ft_lstnew(char *content);
 t_list	*ft_lstlast(t_list *lst);
